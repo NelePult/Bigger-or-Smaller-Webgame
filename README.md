@@ -1,4 +1,7 @@
 # Bigger-or-Smaller-Webgame
+
+---Currently working on the game---
+
 ### An interactive guessing game ###
 
 "Bigger or Smaller" is an interactive guessing game where players must determine which of two displayed options has the larger value based on a given attribute. 
