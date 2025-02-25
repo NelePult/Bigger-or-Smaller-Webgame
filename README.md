@@ -1,12 +1,12 @@
 # Bigger-or-Smaller-Webgame
-##An interactive guessing game##
+### An interactive guessing game ###
 
 "Bigger or Smaller" is an interactive guessing game where players must determine which of two displayed options has the larger value based on a given attribute. 
 If the answer is correct, the player earns a point, and the correct image remains while a new challenge appears.
 
 The game is built using HTML, CSS, and JavaScript.
 
-###How to Play###
+### How to Play ###
 
     Start the game by clicking the "Play" button.
     Two images with a specific question appear (e.g., "Which country has a higher population?").
