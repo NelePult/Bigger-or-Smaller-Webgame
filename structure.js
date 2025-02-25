@@ -43,6 +43,8 @@ const ressources = {
 
 let score = 0; 
 let highscore = 0; 
+let obj1; 
+let obj2; 
 
 function resetScore(){
     score = 0; 
@@ -59,7 +61,7 @@ function getRandomRessource(){
 function updateImage(imageNumber, textVisible) {
     // Die richtige Bild-, Namens- und Attribut-Elemente auswählen
     const random = getRandomRessource();
-    
+
     const img = document.getElementById(`img-${imageNumber}`);
     const ressourceName = document.getElementById(`ressource-name-${imageNumber}`);
     const attributeName = document.getElementById(`attribute-name-${imageNumber}`);
@@ -75,23 +77,51 @@ function updateImage(imageNumber, textVisible) {
         ressourceName.textContent =""; 
         attributeName.textContent =""; 
     }
-    
     return random;
+}
+
+function showText(imageNumber, obj){
+    const ressourceName = document.getElementById(`ressource-name-${imageNumber}`);
+    const attributeName = document.getElementById(`attribute-name-${imageNumber}`);
+    ressourceName.textContent = Object.keys(ressources).find(key => ressources[key] === obj);
+    attributeName.textContent = 'Population: ' + obj.population;
 }
 
 function update(){
    // resetScore(); 
-    const random1 = updateImage(1, true);
-    let random2; 
+    obj1 = updateImage(1, true);
     do {
-        random2 = updateImage(2, false);
-    } while (random1 === random2);
+        obj2 = updateImage(2, false);
+    } while (obj1 === obj2);
 }
+
+// to-do: zum laufen bringen
+function clicked1(){
+    if(obj1.population > obj2.population){
+        score++; 
+        showText(2,obj2);
+        // setTimeout(500); 
+        updateImage(2,false);
+    }else{
+        score=0; 
+        alert("Restart the game!"); 
+        setTimeout(500);
+        if(score>highscore){
+            const highscoreText = document.getElementById(`highscore`);
+            highscoreText.textContent(highscore); 
+        }
+        update();
+    }
+}
+
 
 
 
 // To-Do:     
 // const questionAttribute = document.getElementById("attribute");
-
+update();
 //to-do
+document.getElementById("content-box-1").addEventListener("click", clicked1);
+// document.getElementById("content-box-2").addEventListener("click", clicked2);
+
 document.getElementById("reload").addEventListener("click", update); 

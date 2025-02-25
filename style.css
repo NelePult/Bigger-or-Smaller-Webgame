@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Lilita One", serif;
+    font-weight: 400;
 }
 
 html, body{
@@ -166,13 +168,26 @@ h2{
     width: 95%;
     height: 95%;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-    
+    cursor: pointer;
+}
+
+.content-1 h2,h3{
+    color: white;
 }
 
 #reload{
     height: 80%; 
     width: auto; 
     aspect-ratio: 1/1;
+    background-color: #7c3229;
+    color: #EDDDD4;
+    border: 0;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#reload:hover{
+    background-color: #0f4246;
 }
 
 .logo{
@@ -273,6 +288,14 @@ h2{
 
     #menu:hover{
         background-color: #197278;
+    }
+
+    #content-box-1:hover{
+        border: 0.25rem solid #ff6e5e; 
+    }
+    
+    #content-box-2:hover{
+        border: 0.25rem solid #34eefb; 
     }
     
 }
